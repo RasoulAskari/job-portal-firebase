@@ -20,11 +20,11 @@ export default function NoteOperations() {
     setInputVisible(!isInputVisible);
   };
 
-const getNotes = () => {
-  getDocs(dbInstance).then((data) => {
-    console.log(data);
-  });
-};
+  const getNotes = () => {
+    getDocs(dbInstance).then((data) => {
+      console.log(data);
+    });
+  };
 
   const saveNote = () => {
     console.log("done");
