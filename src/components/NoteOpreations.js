@@ -1,3 +1,4 @@
+"use client";
 import styles from "../../styles/Evernote.module.scss";
 import { useState } from "react";
 
