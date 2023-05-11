@@ -2,6 +2,7 @@
 import Head from "next/head";
 import styles from "../../styles/Evernote.module.scss";
 import NoteOperations from "../components/NoteOpreations";
+import NoteDetails from "@/components/NoteDetails";
 
 export default function Home() {
   const getSingleNote = (id) => {
@@ -20,7 +21,10 @@ export default function Home() {
           <div className={styles.left}>
             <NoteOperations getSingleNote={getSingleNote} />
           </div>
-          <div className={styles.right}>Right</div>
+          <div className={styles.right}>
+            {" "}
+            <NoteDetails />{" "}
+          </div>
         </div>
       </main>
     </div>
