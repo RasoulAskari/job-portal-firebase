@@ -15,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.left}>
-            <NoteOperations />
+            <NoteOperations getSingleNote={getSingleNote} />
           </div>
           <div className={styles.right}>Right</div>
         </div>

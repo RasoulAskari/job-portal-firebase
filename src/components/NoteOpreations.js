@@ -6,7 +6,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-export default function NoteOperations() {
+export default function NoteOperations({ getSingleNote }) {
   const [isInputVisible, setInputVisible] = useState(false);
   const [noteTitle, setNoteTitle] = useState("");
   const dbInstance = collection(database, "notes");
