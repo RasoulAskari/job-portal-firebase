@@ -7,11 +7,10 @@ import { collection, addDoc } from "firebase/firestore";
 export default function NoteOperations() {
   const [isInputVisible, setInputVisible] = useState(false);
   const [noteTitle, setNoteTitle] = useState("");
+  const dbInstance = collection(database, "notes");
   const inputToggle = () => {
     setInputVisible(!isInputVisible);
   };
-
-  console.log(noteTitle);
 
   return (
     <>
