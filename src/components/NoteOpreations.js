@@ -12,8 +12,11 @@ export default function NoteOperations() {
     setInputVisible(!isInputVisible);
   };
 
-  const saveNote = () => {};
-
+  const saveNote = () => {
+    addDoc(dbInstance, {
+      noteTitle: noteTitle,
+    });
+  };
   return (
     <>
       <div className={styles.btnContainer}>
