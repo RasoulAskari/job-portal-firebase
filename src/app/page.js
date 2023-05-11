@@ -3,6 +3,8 @@ import styles from "../../styles/Evernote.module.scss";
 import NoteOperations from "../components/NoteOpreations";
 
 export default function Home() {
+  const getSingleNote = () => {};
+
   return (
     <div className={styles.container}>
       <Head>
