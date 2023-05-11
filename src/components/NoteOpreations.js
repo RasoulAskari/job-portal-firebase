@@ -76,7 +76,9 @@ export default function NoteOperations() {
           return (
             <div key={note.id} className={styles.notesInner}>
               <h3>{note.noteTitle}</h3>
-              <p>{note.noteDesc}</p>
+              <div
+                dangerouslySetInnerHTML={{ __html: note.noteDesc }}
+              ></div>
             </div>
           );
         })}
