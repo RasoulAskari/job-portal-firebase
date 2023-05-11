@@ -10,11 +10,11 @@ export default function NoteOperations() {
   const [isInputVisible, setInputVisible] = useState(false);
   const [noteTitle, setNoteTitle] = useState("");
   const dbInstance = collection(database, "notes");
-const [noteDesc, setNoteDesc] = useState("");
+  const [noteDesc, setNoteDesc] = useState("");
 
-const addDesc = (value) => {
-  setNoteDesc(value);
-};
+  const addDesc = (value) => {
+    setNoteDesc(value);
+  };
 
   const inputToggle = () => {
     setInputVisible(!isInputVisible);
@@ -45,7 +45,7 @@ const addDesc = (value) => {
         <></>
       )}
       <div className={styles.ReactQuill}>
-        <ReactQuill  />
+        <ReactQuill onChange={addDesc} />
       </div>
       <button onClick={saveNote} className={styles.saveBtn}>
         Save Note
