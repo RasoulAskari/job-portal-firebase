@@ -13,6 +13,7 @@ export default function NoteOperations() {
   };
 
   const saveNote = () => {
+    console.log("done");
     addDoc(dbInstance, {
       noteTitle: noteTitle,
     });
