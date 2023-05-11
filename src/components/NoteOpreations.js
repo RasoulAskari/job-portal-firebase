@@ -30,6 +30,7 @@ export default function NoteOperations() {
       ) : (
         <></>
       )}
+      <button className={styles.saveBtn}>Save Note</button>
     </>
   );
 }
