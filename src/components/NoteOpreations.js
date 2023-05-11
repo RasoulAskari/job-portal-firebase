@@ -6,6 +6,9 @@ export default function NoteOperations() {
       <div className={styles.btnContainer}>
         <button className={styles.button}>Add a New Note</button>
       </div>
+      <div className={styles.inputContainer}>
+        <input placeholder="Enter the Title.." />
+      </div>
     </>
   );
 }
