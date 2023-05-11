@@ -38,6 +38,9 @@ export default function NoteOperations() {
       ) : (
         <></>
       )}
+      <div className={styles.ReactQuill}>
+        <ReactQuill />
+      </div>
       <button onClick={saveNote} className={styles.saveBtn}>
         Save Note
       </button>{" "}
