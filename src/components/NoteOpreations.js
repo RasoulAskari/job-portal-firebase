@@ -11,11 +11,11 @@ export default function NoteOperations() {
   const [noteTitle, setNoteTitle] = useState("");
   const dbInstance = collection(database, "notes");
   const [noteDesc, setNoteDesc] = useState("");
-
+  const [notesArray, setNotesArray] = useState([]);
 
   useEffect(() => {
-   getNotes() 
-  })
+    getNotes();
+  });
 
   const addDesc = (value) => {
     setNoteDesc(value);
@@ -27,7 +27,11 @@ export default function NoteOperations() {
 
   const getNotes = () => {
     getDocs(dbInstance).then((data) => {
-      console.log(data);
+      setNotesArray(
+        data.docs.map((item) => {
+          return { ...item.data(), id: item.id };
+        })
+      );
     });
   };
 
@@ -35,7 +39,7 @@ export default function NoteOperations() {
     console.log("done");
     addDoc(dbInstance, {
       noteTitle: noteTitle,
-      noteDess: noteDesc,
+      noteDesc: noteDesc,
     }).then(() => {
       setNoteTitle("");
       setNoteDesc("");
@@ -65,7 +69,17 @@ export default function NoteOperations() {
       )}
       <button onClick={saveNote} className={styles.saveBtn}>
         Save Note
-      </button>{" "}
+      </button>
+      <div>
+        {notesArray.map((note) => {
+          return (
+            <div key={note.id} className={styles.notesInner}>
+              <h3>{note.noteTitle}</h3>
+              <p>{note.noteDesc}</p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
