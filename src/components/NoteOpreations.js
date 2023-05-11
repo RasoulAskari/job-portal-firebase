@@ -25,6 +25,9 @@ export default function NoteOperations() {
     addDoc(dbInstance, {
       noteTitle: noteTitle,
       noteDess: noteDesc,
+    }).then(() => {
+      setNoteTitle("");
+      setNoteDesc("");
     });
   };
   return (
