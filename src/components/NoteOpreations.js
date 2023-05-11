@@ -12,6 +12,8 @@ export default function NoteOperations() {
     setInputVisible(!isInputVisible);
   };
 
+  const saveNote = () => {};
+
   return (
     <>
       <div className={styles.btnContainer}>
@@ -30,7 +32,9 @@ export default function NoteOperations() {
       ) : (
         <></>
       )}
-      <button className={styles.saveBtn}>Save Note</button>
+      <button onClick={savenote} className={styles.saveBtn}>
+        Save Note
+      </button>
     </>
   );
 }
