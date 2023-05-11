@@ -43,6 +43,7 @@ export default function NoteOperations() {
     }).then(() => {
       setNoteTitle("");
       setNoteDesc("");
+      getNotes();
     });
   };
   return (
