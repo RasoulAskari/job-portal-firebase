@@ -43,9 +43,10 @@ export default function NoteOperations() {
             onChange={(e) => setNoteTitle(e.target.value)}
             className={styles.input}
             placeholder="Enter the Title.."
+            value={noteTitle}
           />
           <div className={styles.ReactQuill}>
-            <ReactQuill onChange={addDesc} />
+            <ReactQuill onChange={addDesc} value={noteDesc} />
           </div>
         </div>
       ) : (
