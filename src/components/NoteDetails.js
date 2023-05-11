@@ -15,8 +15,13 @@ export default function NoteDetails({ ID }) {
     if (ID) {
       const singleNote = doc(database, "notes", ID);
       const data = await getDoc(singleNote);
-      setSingleNote({ ...data.date(), id: data.id });
+      setSingleNote({ ...data.data(), id: data.id });
     }
   };
-  return <></>;
+  return (
+    <>
+      <h2>{singleNote.noteTitle}</h2>
+      <div dangerouslySetInnerHTML={{ __html: singleNote.noteDesc }}></div>
+    </>
+  );
 }
