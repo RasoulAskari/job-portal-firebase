@@ -1,6 +1,8 @@
 "use client";
 import styles from "../../styles/Evernote.module.scss";
 import { useState } from "react";
+import { app, database } from "../firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 export default function NoteOperations() {
   const [isInputVisible, setInputVisible] = useState(false);
