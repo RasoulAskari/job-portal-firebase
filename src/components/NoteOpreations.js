@@ -1,6 +1,6 @@
 "use client";
 import styles from "../../styles/Evernote.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { app, database } from "../firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import ReactQuill from "react-quill";
@@ -11,6 +11,11 @@ export default function NoteOperations() {
   const [noteTitle, setNoteTitle] = useState("");
   const dbInstance = collection(database, "notes");
   const [noteDesc, setNoteDesc] = useState("");
+
+
+  useEffect(() => {
+   getNotes() 
+  })
 
   const addDesc = (value) => {
     setNoteDesc(value);
