@@ -24,7 +24,7 @@ export default function Home() {
             <NoteOperations getSingleNote={getSingleNote} />
           </div>
           <div className={styles.right}>
-            <NoteDetails />
+            <NoteDetails ID={ID} />
           </div>
         </div>
       </main>
