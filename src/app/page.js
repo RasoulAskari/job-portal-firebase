@@ -1,3 +1,4 @@
+"use client";
 import Head from "next/head";
 import styles from "../../styles/Evernote.module.scss";
 import NoteOperations from "../components/NoteOpreations";
