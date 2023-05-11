@@ -32,9 +32,9 @@ export default function NoteOperations() {
       ) : (
         <></>
       )}
-      <button onClick={savenote} className={styles.saveBtn}>
+      <button onClick={saveNote} className={styles.saveBtn}>
         Save Note
-      </button>
+      </button>{" "}
     </>
   );
 }
