@@ -1,7 +1,11 @@
+import styles from "../../styles/Evernote.module.scss";
+
 export default function NoteOperations() {
   return (
     <>
-      <h1>This note opreation</h1>
+      <div className={styles.btnContainer}>
+        <button className={styles.button}>Add a New Note</button>
+      </div>
     </>
   );
 }
