@@ -15,9 +15,13 @@ export default function NoteOperations() {
           Add a New Note
         </button>
       </div>
-      <div className={styles.inputContainer}>
-        <input className={styles.input} placeholder="Enter the Title.." />
-      </div>
+      {isInputVisible ? (
+        <div className={styles.inputContainer}>
+          <input className={styles.input} placeholder="Enter the Title.." />
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
