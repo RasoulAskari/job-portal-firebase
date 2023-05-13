@@ -36,6 +36,15 @@ export default function NoteDetails({ ID }) {
       setSingleNote({ ...data.data(), id: data.id });
     }
   };
+
+  const editNote = (id) => {
+    const collectionById = doc(database, "notes", id);
+    updateDoc(collectionById, {
+      noteTitle: noteTitle,
+      noteDesc: noteDesc,
+    });
+  };
+
   return (
     <>
       <div>
