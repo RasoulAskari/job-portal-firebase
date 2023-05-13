@@ -41,6 +41,8 @@ export default function NoteDetails({ ID }) {
     updateDoc(collectionById, {
       noteTitle: noteTitle,
       noteDesc: noteDesc,
+    }).then(() => {
+      window.location.reload();
     });
   };
 
