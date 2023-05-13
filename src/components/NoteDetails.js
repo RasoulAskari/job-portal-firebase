@@ -37,9 +37,13 @@ export default function NoteDetails({ ID }) {
       <div dangerouslySetInnerHTML={{ __html: singleNote.noteDesc }}></div>
       {isEdit ? (
         <div className={styles.inputContainer}>
-          <input className={styles.input} placeholder="Enter the Title.." />
+          <input
+            className={styles.input}
+            value={singleNote.noteTitle}
+            placeholder="Enter the Title.."
+          />
           <div className={styles.ReactQuill}>
-            <ReactQuill />
+            <ReactQuill value={singleNote.noteDesc} />
           </div>
           <button className={styles.saveBtn}>Update Note</button>
         </div>
