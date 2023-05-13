@@ -9,6 +9,8 @@ import styles from "../../styles/Evernote.module.scss";
 export default function NoteDetails({ ID }) {
   const [singleNote, setSingleNote] = useState({});
   const [isEdit, setIsEdit] = useState(false);
+  const [noteTitle, setNoteTitle] = useState("");
+  const [noteDesc, setNoteDesc] = useState("");
 
   useEffect(() => {
     getSingleNote();
