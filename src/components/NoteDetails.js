@@ -61,7 +61,9 @@ export default function NoteDetails({ ID }) {
         <button className={styles.editBtn} onClick={getEditData}>
           Edit
         </button>
-        <button className={styles.deleteBtn}>Delete</button>
+        <button className={styles.deleteBtn} onClick={deleteNote}>
+          Delete
+        </button>
       </div>
       <h2>{singleNote.noteTitle}</h2>
       <div dangerouslySetInnerHTML={{ __html: singleNote.noteDesc }}></div>
