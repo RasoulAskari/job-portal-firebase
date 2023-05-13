@@ -13,6 +13,8 @@ export default function NoteOperations({ getSingleNote }) {
   const [noteDesc, setNoteDesc] = useState("");
   const [notesArray, setNotesArray] = useState([]);
 
+
+  
   useEffect(() => {
     getNotes();
   }, []);
@@ -37,7 +39,6 @@ export default function NoteOperations({ getSingleNote }) {
   };
 
   const saveNote = () => {
-    console.log("done");
     addDoc(dbInstance, {
       noteTitle: noteTitle,
       noteDesc: noteDesc,
@@ -65,6 +66,9 @@ export default function NoteOperations({ getSingleNote }) {
           <div className={styles.ReactQuill}>
             <ReactQuill onChange={addDesc} value={noteDesc} />
           </div>
+          <form>
+            <input type="file" />
+          </form>
         </div>
       ) : (
         <></>
@@ -72,6 +76,7 @@ export default function NoteOperations({ getSingleNote }) {
       <button onClick={saveNote} className={styles.saveBtn}>
         Save Note
       </button>
+
       <div>
         {notesArray.map((note) => {
           return (
