@@ -14,7 +14,9 @@ export default function NoteDetails({ ID }) {
     getSingleNote();
   }, [ID]);
 
-  const getEditData = () => {};
+  const getEditData = () => {
+    setIsEdit(true);
+  };
 
   const getSingleNote = async () => {
     if (ID) {
@@ -26,7 +28,9 @@ export default function NoteDetails({ ID }) {
   return (
     <>
       <div>
-        <button className={styles.editBtn}>Edit</button>
+        <button className={styles.editBtn} onClick={getEditData}>
+          Edit
+        </button>
         <button className={styles.deleteBtn}>Delete</button>
       </div>
       <h2>{singleNote.noteTitle}</h2>
