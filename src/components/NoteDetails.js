@@ -5,6 +5,13 @@ import { doc, getDoc } from "firebase/firestore";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import styles from "../../styles/Evernote.module.scss";
+import {
+  doc,
+  getDoc,
+  getDocs,
+  collection,
+  updateDoc,
+} from "firebase/firestore";
 
 export default function NoteDetails({ ID }) {
   const [singleNote, setSingleNote] = useState({});
