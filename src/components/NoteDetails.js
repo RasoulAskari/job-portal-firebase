@@ -48,13 +48,12 @@ export default function NoteDetails({ ID }) {
   };
 
   const deleteNote = (id) => {
-    const collectionById = doc(database, "notes", id);
+    const collectionId = doc(database, "notes", id);
 
-    deleteDoc(collectionById).then(() => {
+    deleteDoc(collectionId).then(() => {
       window.location.reload();
     });
   };
-
   return (
     <>
       <div>
@@ -63,7 +62,7 @@ export default function NoteDetails({ ID }) {
         </button>
         <button
           className={styles.deleteBtn}
-          onClick={deleteNote(singleNote.id)}
+          onClick={() => deleteNote(singleNote.id)}
         >
           Delete
         </button>
