@@ -15,7 +15,7 @@ export default function NoteOperations({ getSingleNote }) {
 
   useEffect(() => {
     getNotes();
-  });
+  }, []);
 
   const addDesc = (value) => {
     setNoteDesc(value);
@@ -30,7 +30,8 @@ export default function NoteOperations({ getSingleNote }) {
       setNotesArray(
         data.docs.map((item) => {
           return { ...item.data(), id: item.id };
-        })
+        }),
+        [0]
       );
     });
   };
