@@ -49,6 +49,13 @@ export default function NoteOperations({ getSingleNote }) {
       getNotes();
     });
   };
+
+  console.log(imageAsFile);
+  const handleImageAsFile = (e) => {
+    const image = e.target.files[0];
+    setImageAsFile((imageFile) => image);
+  };
+
   return (
     <>
       <div className={styles.btnContainer}>
@@ -68,7 +75,7 @@ export default function NoteOperations({ getSingleNote }) {
             <ReactQuill onChange={addDesc} value={noteDesc} />
           </div>
           <form>
-            <input type="file" />
+            <input type="file" onChange={handleImageAsFile} />
           </form>
         </div>
       ) : (
