@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { app, database } from "../firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import styles from "../../styles/Evernote.module.scss";
@@ -58,12 +57,10 @@ export default function NoteDetails({ ID }) {
       {isEdit ? (
         <div className={styles.inputContainer}>
           <input
-            onChange={(e) => {
-              setNoteTitle(e.target.value);
-            }}
             className={styles.input}
             value={singleNote.noteTitle}
             placeholder="Enter the Title.."
+            onChange={(e) => setNoteTitle(e.target.value)}
           />
           <div className={styles.ReactQuill}>
             <ReactQuill value={singleNote.noteDesc} onChange={setNoteDesc} />
