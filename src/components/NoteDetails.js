@@ -18,6 +18,8 @@ export default function NoteDetails({ ID }) {
 
   const getEditData = () => {
     setIsEdit(true);
+    setNoteTitle(singleNote.noteTitle);
+    setNoteDesc(singleNote.noteDesc);
   };
 
   const getSingleNote = async () => {
@@ -48,12 +50,7 @@ export default function NoteDetails({ ID }) {
             placeholder="Enter the Title.."
           />
           <div className={styles.ReactQuill}>
-            <ReactQuill
-              value={singleNote.noteDesc}
-              onChange={(e) => {
-                setNoteDesc(e.target.value);
-              }}
-            />
+            <ReactQuill value={singleNote.noteDesc} onChange={setNoteDesc} />
           </div>
           <button className={styles.saveBtn}>Update Note</button>
         </div>
