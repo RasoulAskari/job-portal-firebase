@@ -68,7 +68,12 @@ export default function NoteDetails({ ID }) {
           <div className={styles.ReactQuill}>
             <ReactQuill value={singleNote.noteDesc} onChange={setNoteDesc} />
           </div>
-          <button className={styles.saveBtn}>Update Note</button>
+          <button
+            className={styles.saveBtn}
+            onClick={() => editNote(singleNote.id)}
+          >
+            Update Note
+          </button>
         </div>
       ) : (
         <></>
