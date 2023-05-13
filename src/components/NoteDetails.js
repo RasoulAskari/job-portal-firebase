@@ -10,6 +10,7 @@ import {
   getDocs,
   collection,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 
 export default function NoteDetails({ ID }) {
@@ -46,7 +47,13 @@ export default function NoteDetails({ ID }) {
     });
   };
 
-  const deleteNote = () => {};
+  const deleteNote = (id) => {
+    const collectionById = doc(database, "notes", id);
+
+    deleteDoc(collectionById).then(() => {
+      window.location.reload();
+    });
+  };
 
   return (
     <>
