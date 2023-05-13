@@ -46,6 +46,8 @@ export default function NoteDetails({ ID }) {
     });
   };
 
+  const deleteNote = () => {};
+
   return (
     <>
       <div>
