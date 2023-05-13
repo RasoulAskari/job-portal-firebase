@@ -61,3 +61,12 @@ $gray: gray;
     color: $whiteSmoke;
 }
 
+.editBtn, .deleteBtn{
+    width: 5rem;
+    height: 2rem;
+    background-color: rgb(119, 27, 27);
+    color: $whiteSmoke;
+    border: none;
+    cursor: pointer;
+    margin: 10px 10px 10px 0;
+}
