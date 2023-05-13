@@ -14,6 +14,8 @@ export default function NoteDetails({ ID }) {
     getSingleNote();
   }, [ID]);
 
+  const getEditData = () => {};
+
   const getSingleNote = async () => {
     if (ID) {
       const singleNote = doc(database, "notes", ID);
