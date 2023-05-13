@@ -14,7 +14,7 @@ export default function NoteOperations({ getSingleNote }) {
   const [notesArray, setNotesArray] = useState([]);
   const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
-  const [imageAsUrl, setImageAsUrl] = useState(allImputs);
+  const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
   useEffect(() => {
     getNotes();
