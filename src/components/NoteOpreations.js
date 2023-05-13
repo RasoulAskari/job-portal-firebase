@@ -12,9 +12,10 @@ export default function NoteOperations({ getSingleNote }) {
   const dbInstance = collection(database, "notes");
   const [noteDesc, setNoteDesc] = useState("");
   const [notesArray, setNotesArray] = useState([]);
+  const allInputs = { imgUrl: "" };
+  const [imageAsFile, setImageAsFile] = useState("");
+  const [imageAsUrl, setImageAsUrl] = useState(allImputs);
 
-
-  
   useEffect(() => {
     getNotes();
   }, []);
