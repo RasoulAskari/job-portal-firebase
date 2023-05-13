@@ -40,12 +40,20 @@ export default function NoteDetails({ ID }) {
       {isEdit ? (
         <div className={styles.inputContainer}>
           <input
+            onChange={(e) => {
+              setNoteTitle(e.target.value);
+            }}
             className={styles.input}
             value={singleNote.noteTitle}
             placeholder="Enter the Title.."
           />
           <div className={styles.ReactQuill}>
-            <ReactQuill value={singleNote.noteDesc} />
+            <ReactQuill
+              value={singleNote.noteDesc}
+              onChange={(e) => {
+                setNoteDesc(e.target.value);
+              }}
+            />
           </div>
           <button className={styles.saveBtn}>Update Note</button>
         </div>
