@@ -61,7 +61,10 @@ export default function NoteDetails({ ID }) {
         <button className={styles.editBtn} onClick={getEditData}>
           Edit
         </button>
-        <button className={styles.deleteBtn} onClick={deleteNote}>
+        <button
+          className={styles.deleteBtn}
+          onClick={deleteNote(singleNote.id)}
+        >
           Delete
         </button>
       </div>
