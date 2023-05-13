@@ -47,7 +47,7 @@ export default function NoteDetails({ ID }) {
   return (
     <>
       <div>
-        <button className={styles.editBtn} onClick={() => getEditData()}>
+        <button className={styles.editBtn} onClick={getEditData}>
           Edit
         </button>
         <button className={styles.deleteBtn}>Delete</button>
@@ -58,12 +58,12 @@ export default function NoteDetails({ ID }) {
         <div className={styles.inputContainer}>
           <input
             className={styles.input}
-            value={singleNote.noteTitle}
+            value={noteTitle}
             placeholder="Enter the Title.."
             onChange={(e) => setNoteTitle(e.target.value)}
           />
           <div className={styles.ReactQuill}>
-            <ReactQuill value={singleNote.noteDesc} onChange={setNoteDesc} />
+            <ReactQuill value={noteDesc} onChange={setNoteDesc} />
           </div>
           <button
             className={styles.saveBtn}
