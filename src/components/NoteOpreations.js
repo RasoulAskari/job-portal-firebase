@@ -64,7 +64,8 @@ export default function NoteOperations({ getSingleNote }) {
       console.error(`not an image, the image file is a ${typeof imageAsFile}`);
     } else {
       let image = ref(storage, `notes/${imageAsFile.name}`);
-      uploadBytesResumable(image, imageAsFile);
+      let upload = uploadBytesResumable(image, imageAsFile);
+      console.log(upload);
     }
   };
 
