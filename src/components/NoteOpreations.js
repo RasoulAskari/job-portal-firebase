@@ -50,9 +50,9 @@ export default function NoteOperations({ getSingleNote }) {
     });
   };
 
-  console.log(imageAsFile);
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
+    console.log(image);
     setImageAsFile((imageFile) => image);
   };
 
