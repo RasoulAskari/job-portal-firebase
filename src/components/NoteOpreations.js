@@ -56,6 +56,10 @@ export default function NoteOperations({ getSingleNote }) {
     setImageAsFile((imageFile) => image);
   };
 
+  const handleFirebaseUpload = (e) => {
+  
+  }
+
   return (
     <>
       <div className={styles.btnContainer}>
