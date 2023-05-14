@@ -3,6 +3,7 @@ import styles from "../../styles/Evernote.module.scss";
 import { useState, useEffect } from "react";
 import { app, database, storage } from "../firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
+import { ref } from "firebase/storage";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
