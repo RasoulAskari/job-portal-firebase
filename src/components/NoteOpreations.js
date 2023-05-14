@@ -62,9 +62,9 @@ export default function NoteOperations({ getSingleNote }) {
     if (imageAsFile === "") {
       console.error(`not an image, the image file is a ${typeof imageAsFile}`);
     } else {
-      const uploadTask = storage
-        .ref("image/" + imageAsFile.name)
-        .put(imageAsFile);
+      const uploadTask = storage(`/images/${imageAsFile.name}`).put(
+        imageAsFile
+      );
     }
   };
 
