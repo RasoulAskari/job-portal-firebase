@@ -57,8 +57,9 @@ export default function NoteOperations({ getSingleNote }) {
   };
 
   const handleFirebaseUpload = (e) => {
-  
-  }
+    e.preventDefault();
+    console.log("start uploading");
+  };
 
   return (
     <>
@@ -78,8 +79,9 @@ export default function NoteOperations({ getSingleNote }) {
           <div className={styles.ReactQuill}>
             <ReactQuill onChange={addDesc} value={noteDesc} />
           </div>
-          <form>
+          <form onSubmit={handleFirebaseUpload}>
             <input type="file" onChange={handleImageAsFile} />
+            <button> Upload Image </button>
           </form>
         </div>
       ) : (
