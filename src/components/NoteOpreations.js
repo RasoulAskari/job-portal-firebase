@@ -44,6 +44,10 @@ export default function NoteOperations({ getSingleNote }) {
     addDoc(dbInstance, {
       noteTitle: noteTitle,
       noteDesc: noteDesc,
+      imageUrl:
+        imageAsUrl == ""
+          ? "https://firebasestorage.googleapis.com/v0/b/jobportal-112da.appspot.com/o/notes%2F70538726_121955712521523_6348891944814379008_n.jpg"
+          : imageAsUrl,
     }).then(() => {
       setNoteTitle("");
       setNoteDesc("");
@@ -53,7 +57,6 @@ export default function NoteOperations({ getSingleNote }) {
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
-    console.log(image);
     setImageAsFile((imageFile) => image);
   };
 
@@ -64,9 +67,10 @@ export default function NoteOperations({ getSingleNote }) {
       console.error(`not an image, the image file is a ${typeof imageAsFile}`);
     } else {
       let image = ref(storage, `notes/${imageAsFile.name}`);
-      let upload = uploadBytesResumable(image, imageAsFile).then((snapshot) => {
+      await uploadBytesResumable(image, imageAsFile).then((snapshot) => {
         getDownloadURL(snapshot.ref).then((downloadUrl) => {
           setImageAsUrl(downloadUrl);
+          console.log(downloadUrl);
         });
       });
     }
