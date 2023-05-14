@@ -69,6 +69,9 @@ export default function NoteDetails({ ID }) {
       </div>
       <h2>{singleNote.noteTitle}</h2>
       <div dangerouslySetInnerHTML={{ __html: singleNote.noteDesc }}></div>
+
+      <img src={singleNote.imageUrl} className={styles.photo} />
+
       {isEdit ? (
         <div className={styles.inputContainer}>
           <input
