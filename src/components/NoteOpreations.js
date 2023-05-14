@@ -3,7 +3,7 @@ import styles from "../../styles/Evernote.module.scss";
 import { useState, useEffect } from "react";
 import { app, database, storage } from "../firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
-import { ref } from "firebase/storage";
+import { ref, uploadBytesResumable } from "firebase/storage";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -57,15 +57,14 @@ export default function NoteOperations({ getSingleNote }) {
     setImageAsFile((imageFile) => image);
   };
 
-  const handleFirebaseUpload = (e) => {
+  const handleFirebaseUpload = async (e) => {
     e.preventDefault();
 
     if (imageAsFile === "") {
       console.error(`not an image, the image file is a ${typeof imageAsFile}`);
     } else {
-      const uploadTask = storage(`/images/${imageAsFile.name}`).put(
-        imageAsFile
-      );
+      let image = ref(storage, `notes/${imageAsFile.name}`);
+      uploadBytesResumable(image, imageAsFile);
     }
   };
 
