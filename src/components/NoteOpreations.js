@@ -1,7 +1,7 @@
 "use client";
 import styles from "../../styles/Evernote.module.scss";
 import { useState, useEffect } from "react";
-import { app, database } from "../firebaseConfig";
+import { app, database, storage } from "../firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -58,7 +58,14 @@ export default function NoteOperations({ getSingleNote }) {
 
   const handleFirebaseUpload = (e) => {
     e.preventDefault();
-    console.log("start uploading");
+
+    if (imageAsFile === "") {
+      console.error(`not an image, the image file is a ${typeof imageAsFile}`);
+    } else {
+      const uploadTask = storage
+        .ref("image/" + imageAsFile.name)
+        .put(imageAsFile);
+    }
   };
 
   return (
